@@ -1,4 +1,21 @@
 package characters;
 
-public class Balvadr {
+import quests.Quest;
+
+public class Balvadr implements Character{
+    @Override
+    public String getName() {
+        // TODO
+        return null;
+    }
+
+    @Override
+    public void talk() {
+        // TODO
+    }
+
+    public Quest getQuest() {
+        // TODO
+        return null;
+    }
 }
