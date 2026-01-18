@@ -1,4 +1,21 @@
 package characters;
 
-public class WanderingTree {
+import quests.Quest;
+
+public class WanderingTree implements Character{
+    @Override
+    public String getName() {
+        // TODO
+        return null;
+    }
+
+    @Override
+    public void talk() {
+        // TODO
+    }
+
+    public Quest getQuest() {
+        // TODO
+        return null;
+    }
 }
