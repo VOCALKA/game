@@ -1,6 +1,6 @@
 package locations;
 
-public class Camp implements Location{
+public class Camp implements Location2{
     @Override
     public String getName() {
         //TODO

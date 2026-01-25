@@ -1,6 +1,6 @@
 package locations;
 
-public class Beach implements Location{
+public class Beach implements Location2{
     @Override
     public String getName() {
         //TODO

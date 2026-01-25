@@ -1,6 +1,6 @@
 package locations;
 
-public class Forest implements Location{
+public class Forest implements Location2{
     @Override
     public String getName() {
         //TODO

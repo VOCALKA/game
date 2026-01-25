@@ -11,6 +11,7 @@ public class Player implements Character{
     private ArrayList<Item> inventory;
     private ArrayList<Quest> quests;
     private Location currentLocation;
+    private String name;
 
     @Override
     public String getName() {
@@ -23,8 +24,17 @@ public class Player implements Character{
         // TODO
     }
 
-    public void moveTo(Location location) {
-        // TODO
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    public Player(String name, Location startLocation) {
+        this.name = name;
+        this.currentLocation = startLocation;
     }
 
     public void pickUp(Item item) {

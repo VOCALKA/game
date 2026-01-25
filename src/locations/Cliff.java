@@ -1,6 +1,6 @@
 package locations;
 
-public class Cliff implements Location{
+public class Cliff implements Location2{
     @Override
     public String getName() {
         //TODO

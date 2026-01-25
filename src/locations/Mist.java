@@ -1,6 +1,6 @@
 package locations;
 
-public class Mist implements Location{
+public class Mist implements Location2{
     @Override
     public String getName() {
         //TODO

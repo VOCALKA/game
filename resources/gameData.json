@@ -1,0 +1,195 @@
+{
+  "items": [
+    {
+      "id": "item_empty_bottle",
+      "name": "Prázdná lahvička",
+      "type": "QUEST",
+      "description": "Malá skleněná lahvička s korkem. Lze ji naplnit vodou z laguny."
+    },
+    {
+      "id": "item_filled_bottle",
+      "name": "Naplněná lahvička",
+      "type": "QUEST",
+      "description": "Lahvička naplněná čirou vodou z laguny. Dokáže oslabit kletbu."
+    },
+    {
+      "id": "item_wood",
+      "name": "Dřevo",
+      "type": "QUEST",
+      "description": "Kus dřeva z Bludného stromu. Slouží k opravě lodě."
+    },
+    {
+      "id": "item_light",
+      "name": "Světlo",
+      "type": "QUEST",
+      "description": "Lucerna se světlem. Umožňuje setkání s Pánem ostrova."
+    },
+    {
+      "id": "item_flying_boots",
+      "name": "Létající boty",
+      "type": "KEY",
+      "description": "Magické boty umožňující létání. Hlavní odměna a konec hry."
+    }
+  ],
+
+  "characters": [
+    {
+      "id": "player_pavla",
+      "name": "Pavla",
+      "role": "PLAYER",
+      "homeLocationId": "loc_beach",
+      "notes": "Stará, bláznivá žena. Hlavní hratelná postava."
+    },
+    {
+      "id": "npc_island_lord",
+      "name": "Pán ostrova",
+      "role": "NPC",
+      "homeLocationId": "loc_fog",
+      "notes": "Strážce létajících bot, uvězněný mezi světy."
+    },
+    {
+      "id": "npc_wandering_tree",
+      "name": "Bludný strom",
+      "role": "NPC",
+      "homeLocationId": "loc_forest",
+      "notes": "Zakletý strom, který ztratil orientaci a řídí se zpěvem ptáků."
+    },
+    {
+      "id": "npc_balvadr",
+      "name": "Balvadr",
+      "role": "NPC",
+      "homeLocationId": "loc_cave",
+      "notes": "Zakletý balvan, původně člověk."
+    },
+    {
+      "id": "npc_castaway",
+      "name": "Ztroskotanec",
+      "role": "NPC",
+      "homeLocationId": "loc_camp",
+      "notes": "Osamělý muž snažící se opravit loď."
+    }
+  ],
+
+  "locations": [
+    {
+      "id": "loc_beach",
+      "name": "Pláž",
+      "description": "Místo, kde Pavla ztroskotala. Začátek hry.",
+      "exits": {
+        "north": "loc_camp",
+        "east": "loc_x"
+      }
+    },
+    {
+      "id": "loc_camp",
+      "name": "Tábor",
+      "description": "Provizorní tábor Ztroskotance.",
+      "exits": {
+        "south": "loc_beach",
+        "north": "loc_cliff",
+        "east": "loc_lagoon"
+      }
+    },
+    {
+      "id": "loc_cliff",
+      "name": "Útes",
+      "description": "Skalnatý útes nad mořem.",
+      "exits": {
+        "south": "loc_camp",
+        "east": "loc_cave"
+      },
+      "lootTable": ["item_empty_bottle"]
+    },
+    {
+      "id": "loc_cave",
+      "name": "Jeskyně",
+      "description": "Temná jeskyně.",
+      "exits": {
+        "south": "loc_lagoon",
+        "west": "loc_cliff"
+      }
+    },
+    {
+      "id": "loc_lagoon",
+      "name": "Laguna",
+      "description": "Magická voda nedotčená kletbou.",
+      "exits": {
+        "south": "loc_x",
+        "north": "loc_cave",
+        "east": "loc_fog",
+        "west": "loc_camp"
+      }
+    },
+    {
+      "id": "loc_forest",
+      "name": "Les",
+      "description": "Hustý les.",
+      "exits": {
+        "north": "loc_fog",
+        "west": "loc_x"
+      }
+    },
+    {
+      "id": "loc_x",
+      "name": "X",
+      "description": "Tiché místo.",
+      "exits": {
+        "north": "loc_lagoon",
+        "east": "loc_forest",
+        "west": "loc_beach"
+      }
+    },
+    {
+      "id": "loc_fog",
+      "name": "Mlha",
+      "description": "Záhadná oblast.",
+      "exits": {
+        "south": "loc_forest",
+        "north": "loc_well",
+        "west": "loc_lagoon"
+      }
+    },
+    {
+      "id": "loc_well",
+      "name": "Studna",
+      "description": "Skryté místo s létajícími botami.",
+      "exits": {
+        "south": "loc_fog"
+      },
+      "lootTable": ["item_flying_boots"]
+    }
+  ],
+
+  "quests": [
+    {
+      "id": "q_free_balvadr",
+      "title": "Oslab kletbu Balvadra",
+      "giverCharacterId": "npc_balvadr",
+      "requiredItems": ["item_filled_bottle"],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "q_help_tree",
+      "title": "Pomoz Bludnému stromu",
+      "giverCharacterId": "npc_wandering_tree",
+      "requiredItems": [],
+      "status": "NOT_STARTED"
+    },
+    {
+      "id": "q_repair_boat",
+      "title": "Oprav loď Ztroskotance",
+      "giverCharacterId": "npc_castaway",
+      "requiredItems": ["item_wood"],
+      "rewardItem": "item_light",
+      "status": "LOCKED"
+    },
+    {
+      "id": "q_island_lord_trial",
+      "title": "Zkouška Pána ostrova",
+      "giverCharacterId": "npc_island_lord",
+      "requiredItems": ["item_light"],
+      "rewardItem": "item_flying_boots",
+      "status": "LOCKED"
+    }
+  ]
+}

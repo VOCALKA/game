@@ -1,6 +1,6 @@
 package locations;
 
-public class Cave implements Location{
+public class Cave implements Location2{
     @Override
     public String getName() {
         //TODO

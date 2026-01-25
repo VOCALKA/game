@@ -1,6 +1,6 @@
 package locations;
 
-public class Lagoon implements Location{
+public class Lagoon implements Location2{
     @Override
     public String getName() {
         //TODO
