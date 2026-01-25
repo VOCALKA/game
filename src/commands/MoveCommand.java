@@ -31,6 +31,7 @@ public class MoveCommand implements Command{
         // TODO
     }
 
+
     @Override
     public void execute() {
         String dirKey = switch (direction.toLowerCase()) {
