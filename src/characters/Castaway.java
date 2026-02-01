@@ -1,21 +1,33 @@
 package characters;
 
+import quests.CastawayQuest;
 import quests.Quest;
 
+
+
 public class Castaway implements Character{
+
+    private Quest quest = new CastawayQuest();
+
     @Override
     public String getName() {
         // TODO
-        return null;
+        return "Ztroskotanec";
     }
 
     @Override
-    public void talk() {
+    public void talk(Player player) {
+        if (!quest.isCompleted()) {
+            System.out.println("ahoj");
+        } else {
+            System.out.println("ahoj");
+        }
+
         // TODO
     }
 
     public Quest getQuest() {
         // TODO
-        return null;
+        return quest;
     }
 }

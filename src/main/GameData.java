@@ -1,5 +1,6 @@
 package main;
 
+import characters.CharacterData;
 import com.google.gson.Gson;
 import items.ItemData;
 import locations.Location;
@@ -9,12 +10,15 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class GameData {
-   // public ArrayList<ItemData> items;
-    public ArrayList<GameCharacter> characters;
+    public ArrayList<ItemData> items;
+    public ArrayList<CharacterData> characters;
     public ArrayList<Location> locations;
    // public ArrayList<Quest> quests;
+   public ArrayList<Map<String, String>> hints;
+
 
     /**
      * Loads game data from a JSON file.
@@ -59,4 +63,15 @@ public class GameData {
         }
         throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
     }
+    public ItemData findItemDataById(String id) {
+        if (items == null) return null;
+
+        for (ItemData item : items) {
+            if (item.getId().equals(id)) {
+                return item;
+            }
+        }
+        return null;
+    }
+
 }

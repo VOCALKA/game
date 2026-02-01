@@ -4,17 +4,19 @@ public class EndCommand implements Command{
     @Override
     public String getName() {
         // TODO
-        return null;
+        return "konec";
     }
 
     @Override
     public String getDescription() {
         // TODO
-        return null;
+        return "Ukončí hru";
     }
 
     @Override
-    public void execute() {
+    public void execute(String args) {
+        System.out.println("Hra ukončena.");
+        System.exit(0);
         // TODO
     }
 }

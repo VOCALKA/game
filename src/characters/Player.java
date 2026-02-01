@@ -1,27 +1,31 @@
 package characters;
 
-import items.Item;
+import items.*;
 import locations.Location;
 import quests.Quest;
 
 
 import java.util.ArrayList;
 
-public class Player implements Character{
-    private ArrayList<Item> inventory;
-    private ArrayList<Quest> quests;
+public class Player {
+    private ArrayList<Item> inventory = new ArrayList<>();
+    private ArrayList<Quest> quests = new ArrayList<>();
     private Location currentLocation;
     private String name;
+    private Character currentDialogueNpc;
 
-    @Override
-    public String getName() {
-        // TODO
-        return null;
+
+    public void addItem(Item item) {
+        if (inventory.size() >= 2) {
+            System.out.println("Inventář je plný! Musíš něco odložit.");
+        } else {
+            inventory.add(item);
+            System.out.println(item.getName() + " přidán do inventáře.");
+        }
     }
 
-    @Override
-    public void talk() {
-        // TODO
+    public void removeItem(Item item) {
+        inventory.remove(item);
     }
 
     public Location getCurrentLocation() {
@@ -38,17 +42,51 @@ public class Player implements Character{
     }
 
     public void pickUp(Item item) {
+        addItem(item);
         // TODO
     }
 
     public void useItem(Item item) {
+        if (item == null) {
+            System.out.println("Takový předmět nemáš.");
+            return;
+        }
+
+        item.use(this);
         // TODO
     }
     public ArrayList<Item> getInventory() {
         //TODO
-        return null; }
+        return inventory;
+    }
 
     public ArrayList<Quest> getQuests() {
         //TODO
-        return null; }
+        return quests;
+    }
+    public Item getItemByName(String name) {
+        for (Item i : inventory) {
+            if (i.getName().equalsIgnoreCase(name)) return i;
+        }
+        return null;
+    }
+    public boolean hasItem(String itemId) {
+        for (Item item : inventory) {
+            if (item.getId().equalsIgnoreCase(itemId)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void setCurrentDialogueNpc(Character npc) {
+        this.currentDialogueNpc = npc;
+    }
+
+    public Character getCurrentDialogueNpc() {
+        return currentDialogueNpc;
+    }
+    public void endDialogue() {
+        this.currentDialogueNpc = null;
+    }
 }

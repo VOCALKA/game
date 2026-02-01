@@ -14,4 +14,8 @@ public class Wood implements Item{
     public void use(Player player) {
         //TODO
     }
+    @Override
+    public String getId() {
+        return "item_wood";
+    }
 }

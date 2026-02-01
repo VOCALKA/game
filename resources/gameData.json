@@ -4,24 +4,28 @@
       "id": "item_empty_bottle",
       "name": "Prázdná lahvička",
       "type": "QUEST",
+      "text": "Ta lahvička je prázdná… možná by šla někde naplnit.",
       "description": "Malá skleněná lahvička s korkem. Lze ji naplnit vodou z laguny."
     },
     {
       "id": "item_filled_bottle",
       "name": "Naplněná lahvička",
       "type": "QUEST",
+      "text": "Někdo na ostrově zoufale potřebuje vodu z laguny.",
       "description": "Lahvička naplněná čirou vodou z laguny. Dokáže oslabit kletbu."
     },
     {
       "id": "item_wood",
       "name": "Dřevo",
       "type": "QUEST",
+      "text": "Použij ho u Ztroskotance pro opravu lodě.",
       "description": "Kus dřeva z Bludného stromu. Slouží k opravě lodě."
     },
     {
       "id": "item_light",
       "name": "Světlo",
       "type": "QUEST",
+      "text": "Použitím v mlze se objeví Pán ostrova.",
       "description": "Lucerna se světlem. Umožňuje setkání s Pánem ostrova."
     },
     {
@@ -75,6 +79,7 @@
       "id": "loc_beach",
       "name": "Pláž",
       "description": "Místo, kde Pavla ztroskotala. Začátek hry.",
+      "ambientSound": "ššš, frrrr, šmmm",
       "exits": {
         "north": "loc_camp",
         "east": "loc_x"
@@ -84,6 +89,7 @@
       "id": "loc_camp",
       "name": "Tábor",
       "description": "Provizorní tábor Ztroskotance.",
+      "ambientSound": "chrrr",
       "exits": {
         "south": "loc_beach",
         "north": "loc_cliff",
@@ -94,6 +100,7 @@
       "id": "loc_cliff",
       "name": "Útes",
       "description": "Skalnatý útes nad mořem.",
+      "ambientSound": "Píp",
       "exits": {
         "south": "loc_camp",
         "east": "loc_cave"
@@ -104,6 +111,7 @@
       "id": "loc_cave",
       "name": "Jeskyně",
       "description": "Temná jeskyně.",
+      "ambientSound": "drnč",
       "exits": {
         "south": "loc_lagoon",
         "west": "loc_cliff"
@@ -113,6 +121,8 @@
       "id": "loc_lagoon",
       "name": "Laguna",
       "description": "Magická voda nedotčená kletbou.",
+      "text": "Voda je tu zvláštně čistá. Šlo by ji do něčeho nabrat?",
+      "ambientSound": "Vrků, šplouch",
       "exits": {
         "south": "loc_x",
         "north": "loc_cave",
@@ -124,6 +134,7 @@
       "id": "loc_forest",
       "name": "Les",
       "description": "Hustý les.",
+      "ambientSound": "Skříp",
       "exits": {
         "north": "loc_fog",
         "west": "loc_x"
@@ -133,6 +144,7 @@
       "id": "loc_x",
       "name": "X",
       "description": "Tiché místo.",
+      "ambientSound": "Krá",
       "exits": {
         "north": "loc_lagoon",
         "east": "loc_forest",
@@ -143,6 +155,7 @@
       "id": "loc_fog",
       "name": "Mlha",
       "description": "Záhadná oblast.",
+      "ambientSound": "fssst",
       "exits": {
         "south": "loc_forest",
         "north": "loc_well",

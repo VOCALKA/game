@@ -1,6 +1,9 @@
 package locations;
 
+import items.*;
+import characters.Character;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 public class Location {
@@ -8,9 +11,17 @@ public class Location {
     private String name;
     private String description;
     private ArrayList<String> neighbors;
-    private ArrayList<String> lootTable;
+    public ArrayList<String> lootTable;
     private Map<String, String> exits;
+    public String ambientSound;
+    public List<ItemData> items;
+    public List<Character> npcs;
 
+    public String text;
+
+    public String getText() {
+        return text;
+    }
 
     public String getId() {
         return id;
@@ -38,5 +49,31 @@ public class Location {
     public String getDescription() {
         return description;
     }
+
+    public Item getItem(String itemName) {
+        if (items == null)
+            return null;
+
+        for (ItemData data : items) {
+            if (data.getName().equalsIgnoreCase(itemName)) {
+                return ItemFactory.createItem(data.getId());
+            }
+        }
+        return null;
+    }
+
+    public void removeItem(Item item) {
+
+            if (items == null) return;
+            items.removeIf(data -> data.getId().equalsIgnoreCase(item.getId()));
+    }
+
+    public String getAmbientSound() {
+        return ambientSound;
+    }
+    public List<Character> getNpcs() {
+        return npcs;
+    }
+
 //
 }

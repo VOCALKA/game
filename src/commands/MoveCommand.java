@@ -1,5 +1,5 @@
 package commands;
-
+import characters.Character;
 import characters.Player;
 import locations.Location;
 
@@ -12,17 +12,17 @@ public class MoveCommand implements Command{
     private Map<String, Location> world;
     private String direction;
 
-    public MoveCommand(Player player, Map<String, Location> world, String direction) {
+    public MoveCommand(Player player, Map<String, Location> world) {
         this.player = player;
         this.world = world;
-        this.direction = direction;
+        //this.direction = direction;
     }
 
 
     @Override
     public String getName() {
         // TODO
-        return null;
+        return "jdi";
     }
 
     @Override
@@ -33,8 +33,13 @@ public class MoveCommand implements Command{
 
 
     @Override
-    public void execute() {
-        String dirKey = switch (direction.toLowerCase()) {
+    public void execute(String args) {
+        if (args.isEmpty()) {
+            System.out.println("Musíš zadat směr (sever, jih, východ, západ).");
+            return;
+        }
+
+        String dirKey = switch (args.toLowerCase()) {
             case "sever" -> "north";
             case "jih" -> "south";
             case "východ", "vychod" -> "east";
@@ -43,7 +48,7 @@ public class MoveCommand implements Command{
         };
 
         if (dirKey == null) {
-            System.out.println("Neznámý směr: " + direction);
+            System.out.println("Neznámý směr: " + args);
             return;
         }
 
@@ -67,6 +72,7 @@ public class MoveCommand implements Command{
 
         System.out.println("Přesunul ses do: " + nextLocation.getName());
         System.out.println(nextLocation.getDescription());
+
     }
         // TODO
     }
