@@ -79,6 +79,7 @@
       "id": "loc_beach",
       "name": "Pláž",
       "description": "Místo, kde Pavla ztroskotala. Začátek hry.",
+      "text": "Měl bych se začít pohybovat.",
       "ambientSound": "ššš, frrrr, šmmm",
       "exits": {
         "north": "loc_camp",
@@ -89,6 +90,7 @@
       "id": "loc_camp",
       "name": "Tábor",
       "description": "Provizorní tábor Ztroskotance.",
+      "text": "Ta loď opravdu potřebuje opravit.",
       "ambientSound": "chrrr",
       "exits": {
         "south": "loc_beach",
@@ -100,6 +102,7 @@
       "id": "loc_cliff",
       "name": "Útes",
       "description": "Skalnatý útes nad mořem.",
+      "text": "Něco bych tu mohl najit, kdybych chtěl. Nemůžu se soustředit, pořád mě tu otravuje zvlašní zvuk.",
       "ambientSound": "Píp",
       "exits": {
         "south": "loc_camp",
@@ -111,6 +114,7 @@
       "id": "loc_cave",
       "name": "Jeskyně",
       "description": "Temná jeskyně.",
+      "text": "Uh, zakopl jsem o kámen, kolik jich tu je? Možná bych mohl promluvit na tenhle.",
       "ambientSound": "drnč",
       "exits": {
         "south": "loc_lagoon",
@@ -134,6 +138,7 @@
       "id": "loc_forest",
       "name": "Les",
       "description": "Hustý les.",
+      "text": "Dokážou mluvit stromy?",
       "ambientSound": "Skříp",
       "exits": {
         "north": "loc_fog",
@@ -144,6 +149,7 @@
       "id": "loc_x",
       "name": "X",
       "description": "Tiché místo.",
+      "text": "V této lokaci opravdu nic není, počkat...  něco jsem zasleh nebo se mi to jen zdálo.",
       "ambientSound": "Krá",
       "exits": {
         "north": "loc_lagoon",
@@ -155,6 +161,7 @@
       "id": "loc_fog",
       "name": "Mlha",
       "description": "Záhadná oblast.",
+      "text": "Kdyby se tu dalo rozvítit, možná bych se měl soustředit.",
       "ambientSound": "fssst",
       "exits": {
         "south": "loc_forest",

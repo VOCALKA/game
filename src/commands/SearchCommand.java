@@ -29,7 +29,6 @@ public class SearchCommand implements Command{
 
         System.out.println("Rozhlížíš se kolem sebe...");
 
-
         if (loc.getNpcs() != null && !loc.getNpcs().isEmpty()) {
             System.out.print("Postavy zde: ");
             for (int i = 0; i < loc.getNpcs().size(); i++) {

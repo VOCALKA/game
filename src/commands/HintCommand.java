@@ -83,6 +83,6 @@ public class HintCommand implements Command{
                 return;
             }
 
-            System.out.println("Nic tě nenapadá…");
+            System.out.println("Nic");
     }
 }

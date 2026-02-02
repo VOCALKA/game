@@ -30,8 +30,7 @@ public class MoveCommand implements Command{
        return "Pohyb mezi lokacemi (jdi sever, jih, východ, západ)";
         // TODO
     }
-
-
+    
     @Override
     public void execute(String args) {
         if (args.isEmpty()) {
@@ -56,7 +55,8 @@ public class MoveCommand implements Command{
         Map<String, String> exits = current.getExits();
 
         if (!exits.containsKey(dirKey)) {
-            System.out.println("Tímto směrem se nemůžeš pohnout.");
+            //System.out.println("Tímto směrem se nemůžeš pohnout.");
+            System.out.println("Do moře nejdu!!!");
             return;
         }
 

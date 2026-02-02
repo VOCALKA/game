@@ -15,6 +15,7 @@ public class EndCommand implements Command{
 
     @Override
     public void execute(String args) {
+        System.out.println("Pavla spáchá sebevraždu.");
         System.out.println("Hra ukončena.");
         System.exit(0);
         // TODO
