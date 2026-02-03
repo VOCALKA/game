@@ -68,6 +68,12 @@ public class MoveCommand implements Command{
             return;
         }
 
+        if (nextLocation.isLocked()) {
+            System.out.println("Ta skála je zazděná.");
+            return;
+        }
+
+
         player.setCurrentLocation(nextLocation);
 
         System.out.println("Přesunul ses do: " + nextLocation.getName());

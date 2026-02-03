@@ -173,6 +173,7 @@
       "id": "loc_well",
       "name": "Studna",
       "description": "Skryté místo s létajícími botami.",
+      "locked": true,
       "exits": {
         "south": "loc_fog"
       },

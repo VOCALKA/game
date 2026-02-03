@@ -23,6 +23,16 @@ public class Location {
         return text;
     }
 
+    private boolean locked = false;
+
+    public boolean isLocked() {
+        return locked;
+    }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
+    }
+
     public String getId() {
         return id;
     }
