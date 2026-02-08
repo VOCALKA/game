@@ -3,13 +3,14 @@ package characters;
 import items.*;
 import locations.Location;
 import quests.Quest;
+import quests.QuestData;
 
 
 import java.util.ArrayList;
 
 public class Player {
     private ArrayList<Item> inventory = new ArrayList<>();
-    private ArrayList<Quest> quests = new ArrayList<>();
+    private ArrayList<QuestData> quests = new ArrayList<>();
     private Location currentLocation;
     private String name;
     private Character currentDialogueNpc;
@@ -60,7 +61,7 @@ public class Player {
         return inventory;
     }
 
-    public ArrayList<Quest> getQuests() {
+    public ArrayList<QuestData> getQuests() {
         //TODO
         return quests;
     }
@@ -82,11 +83,33 @@ public class Player {
     public void setCurrentDialogueNpc(Character npc) {
         this.currentDialogueNpc = npc;
     }
+    public void removeItemById(String id) {
+        inventory.removeIf(i -> i.getId().equalsIgnoreCase(id));
+    }
 
     public Character getCurrentDialogueNpc() {
         return currentDialogueNpc;
     }
     public void endDialogue() {
         this.currentDialogueNpc = null;
+    }
+    private main.GameData gameData;
+
+    public void setGameData(main.GameData gameData) {
+        this.gameData = gameData;
+    }
+
+    public main.GameData getGameData() {
+        return gameData;
+    }
+    private commands.CommandManager cmdManager;
+
+
+    public void setCmdManager(commands.CommandManager cmdManager) {
+        this.cmdManager = cmdManager;
+    }
+
+    public commands.CommandManager getCmdManager() {
+        return cmdManager;
     }
 }

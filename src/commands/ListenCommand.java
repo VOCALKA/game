@@ -27,14 +27,14 @@ public class ListenCommand implements Command{
     }
 
     @Override
-    public void execute(String args) {
+    public String execute(String args) {
         Location location = player.getCurrentLocation();
         String sound = location.getAmbientSound();
         if (sound == null || sound.isEmpty()) {
-            System.out.println("Nic zvláštního neuslyšíš.");
+
+            return "Nic zvláštního neuslyšíš.";
         } else {
-            System.out.println("Slyšíš: " + sound);
+            return "Slyšíš: " + sound;
         }
-        // TODO
     }
 }

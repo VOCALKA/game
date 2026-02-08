@@ -28,22 +28,23 @@ public class PickUpCommand implements Command{
     }
 
     @Override
-    public void execute(String args) {
+    public String execute(String args) {
         if (args.isEmpty()) {
-            System.out.println("Musíš zadat název předmětu.");
-            return;
+
+            return "Musíš zadat název předmětu.";
         }
         Location loc = player.getCurrentLocation();
         Item item = loc.getItem(args);
-        //Item item = location.getItem(itemName);
+
         if (item == null) {
-            System.out.println("Takový předmět zde není.");
-            return;
+
+            return "Takový předmět zde není.";
         }
 
         player.addItem(item);
         loc.removeItem(item);
-        System.out.println("Sebral(a) jsi: " + item.getName());
+
+        return "Sebral jsi: " + item.getName();
 
         // TODO
     }

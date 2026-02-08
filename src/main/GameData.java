@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import items.ItemData;
 import locations.Location;
 import quests.Quest;
+import quests.QuestData;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,8 +17,11 @@ public class GameData {
     public ArrayList<ItemData> items;
     public ArrayList<CharacterData> characters;
     public ArrayList<Location> locations;
-   // public ArrayList<Quest> quests;
+    public ArrayList<QuestData> quests;
    public ArrayList<Map<String, String>> hints;
+    public int branchesInLagoon;
+    public int treesInForest;
+    public int stonesOnIsland;
 
 
     /**

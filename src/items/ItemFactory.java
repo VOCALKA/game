@@ -1,5 +1,7 @@
 package items;
 
+import commands.CommandManager;
+
 public class ItemFactory {
     public static Item createItem(String id) {
         return switch (id) {

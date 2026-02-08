@@ -14,8 +14,8 @@ public class Location {
     public ArrayList<String> lootTable;
     private Map<String, String> exits;
     public String ambientSound;
-    public List<ItemData> items;
-    public List<Character> npcs;
+    public List<ItemData> items = new ArrayList<>();
+    public List<Character> npcs = new ArrayList<>();
 
     public String text;
 
@@ -40,6 +40,14 @@ public class Location {
     public String getName() {
         return name;
     }
+
+    private int environmentCount;
+    public int getEnvironmentCount() { return environmentCount; }
+    public void setEnvironmentCount(int count) {
+        this.environmentCount = count;
+    }
+
+
 
     @Override
     public String toString() {
@@ -85,5 +93,28 @@ public class Location {
         return npcs;
     }
 
-//
+    public void addNpc(Character npc) {
+        if (!npcs.contains(npc)) {
+            npcs.add(npc);
+        }
+    }
+
+    public void removeNpc(Character npc) {
+        npcs.remove(npc);
+    }
+
+    public characters.Character getNpcByName(String name) {
+        if (this.npcs == null) {
+            return null;
+        }
+
+        for (characters.Character npc : this.npcs) {
+
+            if (npc.getName().equalsIgnoreCase(name)) {
+                return npc;
+            }
+        }
+
+        return null;
+    }
 }

@@ -32,10 +32,10 @@ public class MoveCommand implements Command{
     }
     
     @Override
-    public void execute(String args) {
+    public String execute(String args) {
         if (args.isEmpty()) {
-            System.out.println("Musíš zadat směr (sever, jih, východ, západ).");
-            return;
+
+            return "Musíš zadat směr (sever, jih, východ, západ).";
         }
 
         String dirKey = switch (args.toLowerCase()) {
@@ -47,38 +47,37 @@ public class MoveCommand implements Command{
         };
 
         if (dirKey == null) {
-            System.out.println("Neznámý směr: " + args);
-            return;
+
+            return "Neznámý směr: " + args;
         }
 
         Location current = player.getCurrentLocation();
         Map<String, String> exits = current.getExits();
 
         if (!exits.containsKey(dirKey)) {
-            //System.out.println("Tímto směrem se nemůžeš pohnout.");
-            System.out.println("Do moře nejdu!!!");
-            return;
+
+            return "Do moře nejdu!!!";
         }
 
         String nextId = exits.get(dirKey);
         Location nextLocation = world.get(nextId);
 
         if (nextLocation == null) {
-            System.out.println("Lokace " + nextId + " neexistuje.");
-            return;
+
+            return "Lokace " + nextId + " neexistuje.";
         }
 
         if (nextLocation.isLocked()) {
-            System.out.println("Ta skála je zazděná.");
-            return;
+
+            return "Ta skála je zazděná.";
         }
 
 
         player.setCurrentLocation(nextLocation);
 
-        System.out.println("Přesunul ses do: " + nextLocation.getName());
-        System.out.println(nextLocation.getDescription());
+
+        return "Přesunul ses do: " + nextLocation.getName() + "\n"
+                + nextLocation.getDescription();
 
     }
-        // TODO
-    }
+}

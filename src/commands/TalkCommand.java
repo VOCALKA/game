@@ -1,9 +1,11 @@
 package commands;
 
 import characters.Character;
+import characters.NPC;
 import characters.Player;
 import locations.Location;
 import main.GameCharacter;
+import quests.QuestData;
 
 public class TalkCommand implements Command{
 
@@ -29,27 +31,26 @@ public class TalkCommand implements Command{
     }
 
     @Override
-    public void execute(String args) {
+    public String execute(String args) {
+
         if (args.isEmpty()) {
-            System.out.println("Musíš zadat jméno NPC, se kterým chceš mluvit.");
-            return;
+            return "Musíš zadat jméno NPC, se kterým chceš mluvit (např. 'mluv Balvadr').";
         }
 
 
-        Character npc = null;
-        for (Character c : player.getCurrentLocation().getNpcs()) {
-            if (c.getName().equalsIgnoreCase(args)) {
-                npc = c;
-                break;
-            }
+        Character targetNpc = player.getCurrentLocation().getNpcByName(args);
+
+        if (targetNpc == null) {
+            return "Nikdo jménem '" + args + "' tu není.";
         }
 
-        if (npc == null) {
-            System.out.println("Takové NPC zde není.");
-            return;
+
+        player.setCurrentDialogueNpc(targetNpc);
+
+        if (targetNpc instanceof NPC genericNpc) {
+            return genericNpc.talk(player);
         }
-        player.setCurrentDialogueNpc(npc);
-        npc.talk(player);
-        // TODO
+
+        return "Postava " + targetNpc.getName() + " ti nemá co říct.";
     }
 }

@@ -49,7 +49,8 @@
       "name": "Pán ostrova",
       "role": "NPC",
       "homeLocationId": "loc_fog",
-      "notes": "Strážce létajících bot, uvězněný mezi světy."
+      "locked": true,
+      "notes": "Pozorně mě poslouchej! Pokud chceš odejít, musíš znát tento ostrov. Kolik větví plave v laguně, kolik stromů roste v lese a kolik kamenů leží na ostrově? Odpověz mi třemi čísly s mezerou!"
     },
     {
       "id": "npc_wandering_tree",
@@ -63,13 +64,27 @@
       "name": "Balvadr",
       "role": "NPC",
       "homeLocationId": "loc_cave",
-      "notes": "Zakletý balvan, původně člověk."
+      "notes": "Pomoz mi! Jsem zakletý v tomto kameni. Přines mi vodu z magické laguny!",
+      "interactions": [
+    {
+      "triggerItem": "item_filled_bottle",
+      "npcResponse": "Ó, ta voda! Cítím, jak kletba slábne... Ztroskotanec v táboře ti teď pomůže.",
+      "action": "COMPLETE_QUEST",
+      "targetQuestId": "q_free_balvadr"
+    },
+    {
+      "triggerKeyword": "lod",
+      "npcResponse": "O lodích nic nevím, zeptej se v táboře.",
+      "action": "NONE"
+    }
+  ]
     },
     {
       "id": "npc_castaway",
       "name": "Ztroskotanec",
       "role": "NPC",
       "homeLocationId": "loc_camp",
+      "locked": true,
       "notes": "Osamělý muž snažící se opravit loď."
     }
   ],
@@ -187,20 +202,28 @@
       "title": "Oslab kletbu Balvadra",
       "giverCharacterId": "npc_balvadr",
       "requiredItems": ["item_filled_bottle"],
-      "status": "NOT_STARTED"
+      "unlockCharacterId": "npc_castaway",
+      "unlockLocationId": "loc_camp",
+      "npcResponse": "Ó, ta voda! Cítím, jak kletba slábne... Ztroskotanec ti teď pomůže.",
+      "rewardItem": null,
+      "status": "LOCKED"
     },
     {
       "id": "q_help_tree",
       "title": "Pomoz Bludnému stromu",
       "giverCharacterId": "npc_wandering_tree",
       "requiredItems": [],
-      "status": "NOT_STARTED"
+      "correctLocationIds": ["loc_cliff", "loc_lagoon", "loc_x"],
+      "npcResponse": "To je ono! Slyším je! Tady máš kus mého dřeva na opravu lodě.",
+      "rewardItem": "item_wood",
+      "status": "LOCKED"
     },
     {
       "id": "q_repair_boat",
       "title": "Oprav loď Ztroskotance",
       "giverCharacterId": "npc_castaway",
       "requiredItems": ["item_wood"],
+      "npcResponse": "Skvělá práce! Loď je opravená. Tady máš mou lucernu (Světlo), bude se ti hodit v mlze.",
       "rewardItem": "item_light",
       "status": "LOCKED"
     },
@@ -209,7 +232,7 @@
       "title": "Zkouška Pána ostrova",
       "giverCharacterId": "npc_island_lord",
       "requiredItems": ["item_light"],
-      "rewardItem": "item_flying_boots",
+      "npcResponse": "Tvá mysl je bystrá! Cesta na sever ke studni je volná. Leť, Pavlo!",
       "status": "LOCKED"
     }
   ]

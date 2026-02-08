@@ -26,19 +26,19 @@ public class InventoryCommand implements Command{
     }
 
     @Override
-    public void execute(String args) {
+    public String execute(String args) {
         List<Item> inventory = player.getInventory();
         if (inventory.isEmpty()) {
-            System.out.println("Inventář je prázdný.");
-            return;
+            //System.out.println("Inventář je prázdný.");
+            return "Inventář je prázdný.";
         }
 
-        System.out.println("Inventář:");
+
+        StringBuilder sb = new StringBuilder("Inventář:\n");
         for (Item item : inventory) {
-            System.out.println("- " + item.getName());
+
+            sb.append("- ").append(item.getName()).append("\n");
         }
+        return sb.toString();
     }
-
-        // TODO
-
 }

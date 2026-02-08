@@ -49,40 +49,25 @@ public class HintCommand implements Command{
     }
 
     @Override
-    public void execute(String args) {
+    public String execute(String args) {
 
-            if (!args.isEmpty()) {
-                String searchedName = args.trim().toLowerCase();
-
-                for (Item item : player.getInventory()) {
-
-
-                    if (item.getName().toLowerCase().equals(searchedName)) {
-
-                        ItemData data = gameData.findItemDataById(item.getId());
-
-                        if (data != null && data.getText() != null && !data.getText().isEmpty()) {
-                            System.out.println(": " + data.getText());
-                        } else {
-                            System.out.println("K tomuto předmětu žádná rada není.");
-                        }
-                        return;
-                    }
+        if (!args.isEmpty()) {
+            String searchedName = args.trim().toLowerCase();
+            for (Item item : player.getInventory()) {
+                if (item.getName().toLowerCase().equals(searchedName)) {
+                    ItemData data = gameData.findItemDataById(item.getId());
+                    return (data != null && data.getText() != null) ? data.getText() : "K tomuto předmětu žádná rada není.";
                 }
-
-                System.out.println("Takový předmět v inventáři nemáš.");
-                return;
             }
+            return "Takový předmět v inventáři nemáš.";
+        }
+        Location currentLoc = player.getCurrentLocation();
+        Location dataLoc = gameData.findLocation(currentLoc.getId());
 
-
-            Location currentLoc = player.getCurrentLocation();
-            Location dataLoc = gameData.findLocation(currentLoc.getId());
-
-            if (dataLoc != null && dataLoc.getText() != null && !dataLoc.getText().isEmpty()) {
-                System.out.println(": " + dataLoc.getText());
-                return;
-            }
-
-            System.out.println("Nic");
+        if (dataLoc != null && dataLoc.getText() != null && !dataLoc.getText().isEmpty()) {
+            //System.out.println(": " + dataLoc.getText());
+            return ": " + dataLoc.getText();
+        }
+        return "Nic.";
     }
 }

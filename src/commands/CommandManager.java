@@ -16,20 +16,32 @@ public class CommandManager {
         return commands.get(name.toLowerCase());
     }
 
-    public void executeCommand(String name, String args) {
+    public String executeCommand(String name, String args) {
         Command command = getCommand(name);
         if (command != null) {
-            command.execute(args);
+           return command.execute(args);
         } else {
-            System.out.println("Neznámý příkaz: " + name);
+            return "Neznámý příkaz: " + name;
         }
     }
 
-    public void showCommands() {
-        System.out.println("Dostupné příkazy:");
+    private boolean gameRunning = true;
+
+    public boolean isGameRunning() {
+        return gameRunning;
+    }
+
+    public void stopGame() {
+        this.gameRunning = false;
+    }
+
+    public String showCommands() {
+
+        StringBuilder sb = new StringBuilder("Dostupné příkazy:\n");
         for (Command cmd : commands.values()) {
-            System.out.println("- " + cmd.getName() + ": " + cmd.getDescription());
+            sb.append("- ").append(cmd.getName()).append(": ").append(cmd.getDescription()).append("\n");
         }
+        return sb.toString();
     }
 
 }

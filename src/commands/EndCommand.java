@@ -1,6 +1,8 @@
 package commands;
 
 public class EndCommand implements Command{
+
+
     @Override
     public String getName() {
         // TODO
@@ -12,12 +14,21 @@ public class EndCommand implements Command{
         // TODO
         return "Ukončí hru";
     }
+    private String message;
+    private CommandManager manager;
+
+    public EndCommand() {
+        this.message = "Hra ukončena.";
+    }
+
+    public EndCommand(CommandManager manager,String message) {
+        this.manager = manager;
+        this.message = message;
+    }
 
     @Override
-    public void execute(String args) {
-        System.out.println("Pavla spáchá sebevraždu.");
-        System.out.println("Hra ukončena.");
-        System.exit(0);
-        // TODO
+    public String execute(String args) {
+        manager.stopGame();
+        return message;
     }
 }

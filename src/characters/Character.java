@@ -1,9 +1,23 @@
 package characters;
 
-import quests.Quest;
+public abstract class Character {
+    protected CharacterData data;
 
-public interface Character {
-    String getName();
-    void talk(Player player);
-    Quest getQuest();
+    public void setData(CharacterData data) {
+        this.data = data;
+    }
+
+    public CharacterData getData() {
+        return data;
+    }
+
+    public String getId() {
+        return data.getId();
+    }
+
+    public abstract String getName();
+
+
+    public abstract String talk(Player player);
+
 }

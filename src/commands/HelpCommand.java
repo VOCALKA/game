@@ -10,19 +10,19 @@ public class HelpCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
+
         return "pomoc";
     }
 
     @Override
     public String getDescription() {
-        // TODO
+
         return "Zobrazí seznam dostupných příkazů";
     }
 
     @Override
-    public void execute(String args) {
-        manager.showCommands();
-        // TODO
+    public String execute(String args) {
+        return manager.showCommands();
+
     }
 }

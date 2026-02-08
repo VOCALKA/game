@@ -6,6 +6,12 @@ public class CharacterData {
     private String role;
     private String homeLocationId;
     private String notes;
+    private boolean locked;
+
+
+    public boolean isLocked() {
+        return locked;
+    }
 
     public String getId() {
         return id;
@@ -18,7 +24,15 @@ public class CharacterData {
     public String getHomeLocationId() {
         return homeLocationId;
     }
-    public static Character createCharacter(CharacterData data) {
+
+    public String getRole() {
+        return role;
+    }
+
+    public String getNotes() {
+        return notes;
+    }
+    /*public static Character createCharacter(CharacterData data) {
 
         switch (data.getId()) {
 
@@ -33,5 +47,5 @@ public class CharacterData {
             default:
                 return null;
         }
-    }
+    }*/
 }
