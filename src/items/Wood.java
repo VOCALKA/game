@@ -11,7 +11,8 @@ public class Wood implements Item{
     }
 
     @Override
-    public void use(Player player) {
+    public String use(Player player) {
+        return null;
         //TODO
     }
     @Override

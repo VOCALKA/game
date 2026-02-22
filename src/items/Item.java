@@ -4,6 +4,6 @@ import characters.Player;
 
 public interface Item {
     String getName();
-    void use(Player player);
+    String use(Player player);
     String getId();
 }

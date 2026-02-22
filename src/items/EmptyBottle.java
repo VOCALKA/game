@@ -10,13 +10,15 @@ public class EmptyBottle implements Item{
     }
 
     @Override
-    public void use(Player player) {
+    public String use(Player player) {
         if (player.getCurrentLocation().getId().equals("loc_lagoon")) {
-            System.out.println("");
+            //System.out.println("");
             player.removeItem(this);
             player.addItem(new FilledBottle());
+            return "Naplnil jsi lahvičku magickou vodou.";
         } else {
-            System.out.println("Nelze naplnit zde.");
+            //System.out.println("Nelze naplnit zde.");
+            return "Zde lahvičku naplnit nemůžeš.";
         }
 
         //TODO

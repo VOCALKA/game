@@ -151,15 +151,28 @@ public class AnswerCommand implements Command {
         return currentNpc.getName() + ": " + qData.npcResponse;
     }
 
-    private void giveReward(String itemId) {
+    /*private void giveReward(String itemId) {
 
         items.Item reward = items.ItemFactory.createItem(itemId);
 
         if (reward != null) {
             player.addItem(reward);
-            System.out.println("[SYSTÉM]: Do inventáře přidáno: " + reward.getName());
+            //System.out.println("[SYSTÉM]: Do inventáře přidáno: " + reward.getName());
         } else {
-            System.out.println("[DEBUG]: ItemFactory nenašla předmět s ID: " + itemId);
+            //System.out.println("[DEBUG]: ItemFactory nenašla předmět s ID: " + itemId);
+        }
+    }*/
+    private void giveReward(String itemId) {
+        items.Item reward;
+
+        if (itemId.equals("item_flying_boots")) {
+            reward = new items.FlyingBoots(player.getCmdManager());
+        } else {
+            reward = items.ItemFactory.createItem(itemId, player.getCmdManager());
+        }
+
+        if (reward != null) {
+            player.addItem(reward);
         }
     }
 

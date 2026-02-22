@@ -10,9 +10,10 @@ public class FilledBottle implements Item{
     }
 
     @Override
-    public void use(Player player) {
-        System.out.println("Napila ses vody.");
-        player.removeItem(this);
+    public String use(Player player) {
+        //System.out.println("Napila ses vody.");
+        //player.removeItem(this);
+        return "Napil ses vody.";
         //TODO
     }
     @Override

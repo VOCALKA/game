@@ -45,7 +45,8 @@ public class UseItemCommand implements Command{
         Item item = player.getItemByName(args);
         if (item == null) return "Nemáš tento předmět v inventáři.";
 
-        item.use(player);
+        //item.use(player);
+        String itemResult = item.use(player);
         String itemName = item.getName();
         String itemId = item.getId();
 
@@ -68,7 +69,8 @@ public class UseItemCommand implements Command{
             }
         }
 
-        return "Použil jsi: " + itemName + ", ale nic zvláštního se nestalo.";
+        //return "Použil jsi: " + itemName + ", ale nic zvláštního se nestalo.";
+        return itemResult;
     }
 
     private void unlockNpcGlobally(String npcId, String locationId) {

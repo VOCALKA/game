@@ -1,5 +1,6 @@
 package locations;
 
+import characters.Player;
 import items.*;
 import characters.Character;
 import java.util.ArrayList;
@@ -16,6 +17,7 @@ public class Location {
     public String ambientSound;
     public List<ItemData> items = new ArrayList<>();
     public List<Character> npcs = new ArrayList<>();
+
 
     public String text;
 
@@ -68,13 +70,13 @@ public class Location {
         return description;
     }
 
-    public Item getItem(String itemName) {
+    public Item getItem(String itemName, Player player) {
         if (items == null)
             return null;
 
         for (ItemData data : items) {
             if (data.getName().equalsIgnoreCase(itemName)) {
-                return ItemFactory.createItem(data.getId());
+                return ItemFactory.createItem(data.getId(), player.getCmdManager());
             }
         }
         return null;

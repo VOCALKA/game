@@ -34,7 +34,7 @@ public class PickUpCommand implements Command{
             return "Musíš zadat název předmětu.";
         }
         Location loc = player.getCurrentLocation();
-        Item item = loc.getItem(args);
+        Item item = loc.getItem(args, player);
 
         if (item == null) {
 

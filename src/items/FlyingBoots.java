@@ -7,6 +7,16 @@ import commands.EndCommand;
 public class FlyingBoots implements Item{
     CommandManager cmdManager;
 
+    public FlyingBoots(CommandManager cmdManager) {
+        this.cmdManager = cmdManager;
+    }
+
+    private boolean exit = false;
+
+
+
+
+
     @Override
     public String getName() {
         //TODO
@@ -14,13 +24,15 @@ public class FlyingBoots implements Item{
     }
 
     @Override
-    public void use(Player player) {
-        System.out.println("Vznesla ses do vzduchu!");
-        //new EndCommand(cmdManager, "Gratuluji! Vyhrál jsi hru!").execute("");
-        System.exit(0);
+    public String use(Player player) {
+        System.out.println("Vznesla ses do vzduchu! Vyhrál jsi.");
         player.removeItem(this);
+        System.exit(0);
+        return "";
         //TODO Dát do string metody, změnit System.exit(0);
     }
+
+
     @Override
     public String getId() {
         return "item_flying_boots";

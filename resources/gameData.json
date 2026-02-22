@@ -214,7 +214,7 @@
       "giverCharacterId": "npc_wandering_tree",
       "requiredItems": [],
       "correctLocationIds": ["loc_cliff", "loc_lagoon", "loc_x"],
-      "npcResponse": "To je ono! Slyším je! Tady máš kus mého dřeva na opravu lodě.",
+      "npcResponse": "To je ono! Slyším je! Tady máš kus mého dřeva.",
       "rewardItem": "item_wood",
       "status": "LOCKED"
     },
@@ -223,7 +223,7 @@
       "title": "Oprav loď Ztroskotance",
       "giverCharacterId": "npc_castaway",
       "requiredItems": ["item_wood"],
-      "npcResponse": "Skvělá práce! Loď je opravená. Tady máš mou lucernu (Světlo), bude se ti hodit v mlze.",
+      "npcResponse": "Skvělá práce! Loď je opravená. Tady máš mou Světlo.",
       "rewardItem": "item_light",
       "status": "LOCKED"
     },

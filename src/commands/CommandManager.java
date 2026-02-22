@@ -35,6 +35,10 @@ public class CommandManager {
         this.gameRunning = false;
     }
 
+    public void setGameRunning(boolean running) {
+        this.gameRunning = running;
+    }
+
     public String showCommands() {
 
         StringBuilder sb = new StringBuilder("Dostupné příkazy:\n");

@@ -78,7 +78,8 @@ public class GameLoader {
         Player player = new Player("Pavla", world.get("loc_beach"));
         player.setGameData(gameData);
 
-        //player.addItem(items.ItemFactory.createItem("item_flying_boots"));
+
+        //player.addItem(items.ItemFactory.createItem("item_flying_boots", player.getCmdManager()));
 
 
 
@@ -100,6 +101,7 @@ public class GameLoader {
         cmdManager.registerCommand(new SearchCommand(player));
 
 
+
         if (gameData.quests != null) {
             player.getQuests().addAll(gameData.quests);
         }
@@ -110,23 +112,23 @@ public class GameLoader {
 
         Scanner scanner = new Scanner(System.in);
 
-        while (cmdManager.isGameRunning()) {
-            System.out.print("> ");
-            String input = scanner.nextLine().trim().toLowerCase();
-            if (input.isEmpty())
-                continue;
+            while (cmdManager.isGameRunning()) {
+                System.out.print("> ");
+                String input = scanner.nextLine().trim().toLowerCase();
+                if (!cmdManager.isGameRunning()) break;
+                if (input.isEmpty())
+                    continue;
 
-            String[] parts = input.split(" ", 2);
-            String cmdName = parts[0];
-            String args = parts.length > 1 ? parts[1] : "";
+                String[] parts = input.split(" ", 2);
+                String cmdName = parts[0];
+                String args = parts.length > 1 ? parts[1] : "";
 
 
-
-            String response = cmdManager.executeCommand(cmdName, args);
-            System.out.println(response);
-        }
+                String response = cmdManager.executeCommand(cmdName, args);
+                System.out.println(response);
+            }
         scanner.close();
-        System.out.println("--- Scanner uzavřen, program ukončen ---");
+        System.out.println("Hra ukončena");
 
     }
     private ItemData findItemDataById(GameData data, String id) {
