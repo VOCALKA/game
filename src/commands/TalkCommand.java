@@ -12,6 +12,10 @@ public class TalkCommand implements Command{
     private Character npc;
     private Player player;
 
+    /**
+     * Constructor for TalkCommand.
+     * @param player the player who will talk to NPCs
+     */
     public TalkCommand(Player player) {
         //this.npc = npc;
         this.player = player;
@@ -30,6 +34,14 @@ public class TalkCommand implements Command{
         return "Zahájí rozhovor s NPC";
     }
 
+    /**
+     * Executes the talk command.
+     * Finds the NPC in the current location by name, sets it as the dialogue target,
+     * and retrieves its dialogue text.
+     *
+     * @param args the name of the NPC to talk to
+     * @return dialogue text from the NPC, or an error if the NPC isn't present
+     */
     @Override
     public String execute(String args) {
 

@@ -16,6 +16,12 @@ public class AnswerCommand implements Command {
     private Map<String, Location> world;
     private GameData gameData;
 
+    /**
+     * Constructs a new AnswerCommand for a player in a given world with access to game data.
+     * @param player the player executing the command
+     * @param world map of all game locations
+     * @param gameData full game data
+     */
     public AnswerCommand(Player player, Map<String, Location> world, GameData gameData) {
         this.player = player;
         this.world = world;
@@ -34,6 +40,12 @@ public class AnswerCommand implements Command {
         return "Odpovídej na otázku nebo volbu";
     }
 
+    /**
+     * Executes the answer command, checking if the player's input satisfies a quest or trial.
+     * Handles special trials like the Island Lord trial and item/location requirements.
+     * @param args the player's answer text
+     * @return response text from the NPC or game system
+     */
     @Override
     public String execute(String args) {
 
@@ -136,6 +148,12 @@ public class AnswerCommand implements Command {
     }
 
 
+    /**
+     * Marks a quest as completed, gives rewards, unlocks NPCs if needed, and ends dialogue.
+     * @param qData the quest to finish
+     * @param currentNpc the NPC giving the quest
+     * @return message to the player from the NPC
+     */
     private String finishQuest(QuestData qData, characters.Character currentNpc) {
         qData.status = "COMPLETED";
 
@@ -162,6 +180,12 @@ public class AnswerCommand implements Command {
             //System.out.println("[DEBUG]: ItemFactory nenašla předmět s ID: " + itemId);
         }
     }*/
+
+    /**
+     * Gives a reward item to the player. Handles Flying Boots specially.
+     * @param itemId the ID of the item to give
+     */
+
     private void giveReward(String itemId) {
         items.Item reward;
 
@@ -175,6 +199,12 @@ public class AnswerCommand implements Command {
             player.addItem(reward);
         }
     }
+
+    /**
+     * Unlocks an NPC at a specific location globally (makes them appear in the world).
+     * @param npcId the ID of the NPC to unlock
+     * @param locationId the location where the NPC should appear
+     */
 
     private void unlockNpcGlobally(String npcId, String locationId) {
         Location loc = world.get(locationId);

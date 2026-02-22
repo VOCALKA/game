@@ -15,35 +15,65 @@ public class HintCommand implements Command{
     private String requiredItemId;
     private String text;
 
+    /**
+     * Returns the ID of the location associated with this hint.
+     */
     public String getLocationId() {
         return locationId;
     }
 
+    /**
+     * Returns the ID of the item associated with this hint.
+     */
     public String getRequiredItemId() {
         return requiredItemId;
     }
 
+    /**
+     * Returns the hint text.
+     */
     public String getText() {
         return text;
     }
 
+    /**
+     * Constructor for the HintCommand.
+     * @param player the player requesting hints
+     * @param gameData the game's data repository containing items and locations
+     */
     public HintCommand(Player player, GameData gameData) {
         this.player = player;
         this.gameData = gameData;
 
     }
+    /**
+     * Returns the command name.
+     * @return "rada"
+     */
     @Override
     public String getName() {
         // TODO
         return "rada";
     }
 
+    /**
+     * Returns the command description.
+     * @return a short description of the command
+     */
     @Override
     public String getDescription() {
         // TODO
         return "Zobrazí nápovědu";
     }
 
+    /**
+     * Executes the hint command.
+     * If an item name is provided, searches the player's inventory
+     * for that item and returns its associated hint if available.
+     * Otherwise, returns a hint for the current location if available.
+     * @param args the item name (optional)
+     * @return the hint text or an error message
+     */
     @Override
     public String execute(String args) {
 

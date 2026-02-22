@@ -12,6 +12,11 @@ public class MoveCommand implements Command{
     private Map<String, Location> world;
     private String direction;
 
+    /**
+     * Constructor for MoveCommand.
+     * @param player the player who will move
+     * @param world the game world containing all locations
+     */
     public MoveCommand(Player player, Map<String, Location> world) {
         this.player = player;
         this.world = world;
@@ -30,7 +35,15 @@ public class MoveCommand implements Command{
        return "Pohyb mezi lokacemi (jdi sever, jih, východ, západ)";
         // TODO
     }
-    
+
+    /**
+     * Executes the move command.
+     * Checks if the direction is valid, whether the exit exists,
+     * and whether the target location is locked. If successful,
+     * moves the player to the new location.
+     * @param args the direction to move (e.g., "sever", "jih")
+     * @return a message about the result of the move attempt
+     */
     @Override
     public String execute(String args) {
         if (args.isEmpty()) {

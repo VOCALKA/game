@@ -19,6 +19,11 @@ public class UseItemCommand implements Command{
     private Map<String, Location> world;
     private GameData gameData;
 
+    /**
+     * Constructor for UseItemCommand.
+     * @param player the player who will use items
+     * @param world the map of all locations in the game
+     */
     public UseItemCommand(Player player, Map<String, Location> world) {
         this.player = player;
         this.world = world;
@@ -37,6 +42,13 @@ public class UseItemCommand implements Command{
         return "Použije předmět z inventáře";
     }
 
+    /**
+     * Executes the "use item" command.
+     * Finds the item in the player's inventory, uses it, and checks for quest interactions.
+     *
+     * @param args the name of the item to use
+     * @return the result of using the item, or an error message if the item is not available
+     */
     @Override
     public String execute(String args) {
 
@@ -73,6 +85,11 @@ public class UseItemCommand implements Command{
         return itemResult;
     }
 
+    /**
+     * Unlocks a specific NPC in a given location globally.
+     * @param npcId the ID of the NPC to unlock
+     * @param locationId the location ID where the NPC should appear
+     */
     private void unlockNpcGlobally(String npcId, String locationId) {
 
         Location loc = world.get(locationId);

@@ -15,6 +15,9 @@ import quests.QuestData;
 import java.util.*;
 
 public class GameLoader {
+    /**
+     * Initializes the game world and starts the main game loop.
+     */
     public void gameLoader() {
         GameData gameData = GameData.loadGameDataFromResources("/gameData.json");
 
@@ -131,6 +134,9 @@ public class GameLoader {
         System.out.println("Hra ukončena");
 
     }
+    /**
+     * Finds an ItemData object by its ID.
+     */
     private ItemData findItemDataById(GameData data, String id) {
         for (ItemData item : data.items) {
             if (item.id.equals(id)) return item;
@@ -149,6 +155,9 @@ public class GameLoader {
         }
         return null;
     }
+    /**
+     * Creates a Character instance from CharacterData.
+     */
     public static characters.Character createCharacter(CharacterData data) {
 
         return new characters.NPC(data);

@@ -9,6 +9,10 @@ public class InventoryCommand implements Command{
 
     private Player player;
 
+    /**
+     * Constructor for InventoryCommand.
+     * @param player the player whose inventory will be displayed
+     */
     public InventoryCommand(Player player) {
         this.player = player;
     }
@@ -25,6 +29,13 @@ public class InventoryCommand implements Command{
         return "Zobrazí aktuální inventář hráče";
     }
 
+    /**
+     * Executes the inventory command.
+     * Returns a formatted list of all items in the player's inventory,
+     * or a message indicating that the inventory is empty.
+     * @param args not used for this command
+     * @return the inventory list as a string
+     */
     @Override
     public String execute(String args) {
         List<Item> inventory = player.getInventory();

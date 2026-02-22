@@ -3,6 +3,13 @@ package items;
 import commands.CommandManager;
 
 public class ItemFactory {
+    /**
+     * Creates an item instance based on its unique ID.
+     *
+     * @param id         the unique ID of the item to create
+     * @param cmdManager the CommandManager to pass to items that need it (can be null for items that don't use it)
+     * @return the created Item instance, or null if the ID is unknown
+     */
     public static Item createItem(String id, CommandManager cmdManager) {
         return switch (id) {
             case "item_empty_bottle" -> new EmptyBottle();

@@ -6,6 +6,10 @@ import locations.Location;
 public class SearchCommand implements Command{
     private Player player;
 
+    /**
+     * Constructor for SearchCommand.
+     * @param player the player performing the search
+     */
     public SearchCommand(Player player) {
         this.player = player;
     }
@@ -20,6 +24,13 @@ public class SearchCommand implements Command{
         return "Prohledá aktuální lokaci a vypíše, co se zde nachází";
     }
 
+    /**
+     * Executes the search command.
+     * Lists all NPCs and items in the current location.
+     * Also displays location-specific environmental information.
+     * @param args any additional arguments (ignored for this command)
+     * @return formatted string describing the contents of the location
+     */
     @Override
     public String execute(String args) {
 

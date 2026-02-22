@@ -12,6 +12,16 @@ public class Light implements Item{
         return "Světlo";
     }
 
+    /**
+     * Uses the light item in the current location.
+     *
+     * - In the fog location, it reveals the "Island Lord" NPC if not already present.
+     * - Removes the item from the player's inventory once used successfully.
+     * - In other locations, it does nothing significant.
+     *
+     * @param player the player using the item
+     * @return a message describing the result of using the item
+     */
     @Override
     public String use(Player player) {
         Location loc = player.getCurrentLocation();

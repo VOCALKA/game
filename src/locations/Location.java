@@ -62,14 +62,24 @@ public class Location {
                 '}';
     }
 //
+    /** Returns a map of directional exits for this location. */
     public Map<String, String> getExits() {
         return exits;
     }
 //
+    /** Returns the textual description of the location. */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Returns an Item object for a given name if it exists in the location.
+     * Uses the ItemFactory to create the item instance.
+     *
+     * @param itemName the name of the item to retrieve
+     * @param player the player (used to access CommandManager for certain items)
+     * @return the Item instance if found, otherwise null
+     */
     public Item getItem(String itemName, Player player) {
         if (items == null)
             return null;
@@ -82,12 +92,14 @@ public class Location {
         return null;
     }
 
+    /** Removes an item from the location's items list. */
     public void removeItem(Item item) {
 
             if (items == null) return;
             items.removeIf(data -> data.getId().equalsIgnoreCase(item.getId()));
     }
 
+    /** Returns the ambient sound associated with this location. */
     public String getAmbientSound() {
         return ambientSound;
     }
@@ -95,6 +107,7 @@ public class Location {
         return npcs;
     }
 
+    /** Adds an NPC to this location if not already present. */
     public void addNpc(Character npc) {
         if (!npcs.contains(npc)) {
             npcs.add(npc);
@@ -105,6 +118,12 @@ public class Location {
         npcs.remove(npc);
     }
 
+    /**
+     * Finds an NPC in this location by name (case-insensitive).
+     *
+     * @param name the name of the NPC to find
+     * @return the NPC instance if found, otherwise null
+     */
     public characters.Character getNpcByName(String name) {
         if (this.npcs == null) {
             return null;

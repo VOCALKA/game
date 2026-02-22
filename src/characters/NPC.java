@@ -4,15 +4,29 @@ import quests.QuestData;
 
 public class NPC extends Character {
 
+    /**
+     * Creates a new NPC with the provided character data.
+     * @param data the static data describing this NPC
+     */
     public NPC(CharacterData data) {
         this.data = data;
     }
 
+    /**
+     * Returns the name of this NPC.
+     * @return NPC's name
+     */
     @Override
     public String getName() {
         return data.getName();
     }
 
+    /**
+     * Handles dialogue with the player.
+     * Checks if the player has quests from this NPC and updates quest status if necessary.
+     * @param player the player interacting with this NPC
+     * @return dialogue text as a String
+     */
     public String talk(Player player) {
 
         for (QuestData q : player.getQuests()) {

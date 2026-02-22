@@ -14,6 +14,14 @@ public class ItemData {
         return text;
     }
 
+    /**
+     * Constructs a new ItemData with the given properties.
+     *
+     * @param id          unique item ID
+     * @param name        display name of the item
+     * @param type        type/category of the item
+     * @param description description of the item
+     */
     public ItemData(String id, String name, String type, String description) {
         this.id = id;
         this.name = name;
