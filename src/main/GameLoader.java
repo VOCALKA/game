@@ -92,7 +92,7 @@ public class GameLoader {
         cmdManager.registerCommand(new QuestsCommand(player));
         cmdManager.registerCommand(new MoveCommand(player, world));
         cmdManager.registerCommand(new PickUpCommand(player));
-        cmdManager.registerCommand(new UseItemCommand(player));
+        cmdManager.registerCommand(new UseItemCommand(player, world));
         cmdManager.registerCommand(new TalkCommand(player));
         //cmdManager.registerCommand(new AnswerCommand(player));
         cmdManager.registerCommand(new AnswerCommand(player, world, gameData));

@@ -56,7 +56,6 @@ public class AnswerCommand implements Command {
                 if (qData.getId().equals("q_island_lord_trial")) {
                     if (args.isEmpty()) return currentNpc.getName() + ": Musíš mi říct tři čísla oddělená mezerou!";
 
-
                     int v_laguna = world.get("loc_lagoon").getEnvironmentCount();
                     int s_les = world.get("loc_forest").getEnvironmentCount();
                     int k_suma = world.get("loc_cliff").getEnvironmentCount() +
@@ -91,7 +90,7 @@ public class AnswerCommand implements Command {
                     for (String locId : qData.correctLocationIds) {
                         Location targetLoc = world.get(locId);
                         if (targetLoc == null) {
-                            System.out.println("[DEBUG]: Lokace s ID " + locId + " neexistuje v mapě world!");
+                            System.out.println(": Lokace s ID " + locId + " neexistuje v mapě world!");
                             allFound = false;
                             break;
                         }
@@ -99,8 +98,7 @@ public class AnswerCommand implements Command {
 
                         String expectedName = targetLoc.getName().toLowerCase().trim();
 
-
-                        System.out.println("[DEBUG]: Hledám '" + expectedName + "' v tvé odpovědi '" + playerInput + "'");
+                        //System.out.println(": Hledám '" + expectedName + "' v tvé odpovědi '" + playerInput + "'");
 
                         if (!playerInput.contains(expectedName)) {
                             allFound = false;
@@ -141,11 +139,9 @@ public class AnswerCommand implements Command {
     private String finishQuest(QuestData qData, characters.Character currentNpc) {
         qData.status = "COMPLETED";
 
-
         if (qData.getUnlockCharacterId() != null) {
             unlockNpcGlobally(qData.getUnlockCharacterId(), qData.getUnlockLocationId());
         }
-
 
         if (qData.getRewardItem() != null) {
             giveReward(qData.getRewardItem());
@@ -180,12 +176,11 @@ public class AnswerCommand implements Command {
                         loc.npcs = new java.util.ArrayList<>();
                     }
 
-
                     loc.addNpc(newNpc);
 
                     loc.setLocked(false);
 
-                    System.out.println("[DEBUG]: Postava " + cd.getName() + " přidána do " + loc.getName());
+                    //System.out.println("[DEBUG]: Postava " + cd.getName() + " přidána do " + loc.getName());
                     break;
                 }
             }

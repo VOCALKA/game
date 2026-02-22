@@ -13,7 +13,6 @@ public class NPC extends Character {
         return data.getName();
     }
 
-
     public String talk(Player player) {
 
         for (QuestData q : player.getQuests()) {

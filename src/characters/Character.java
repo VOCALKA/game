@@ -17,7 +17,6 @@ public abstract class Character {
 
     public abstract String getName();
 
-
     public abstract String talk(Player player);
 
 }

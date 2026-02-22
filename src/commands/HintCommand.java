@@ -6,10 +6,6 @@ import items.ItemData;
 import main.GameData;
 import locations.Location;
 
-
-import java.util.ArrayList;
-import java.util.Map;
-
 public class HintCommand implements Command{
 
     private Player player;

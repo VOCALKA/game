@@ -19,8 +19,9 @@ public class UseItemCommand implements Command{
     private Map<String, Location> world;
     private GameData gameData;
 
-    public UseItemCommand(Player player) {
+    public UseItemCommand(Player player, Map<String, Location> world) {
         this.player = player;
+        this.world = world;
 
     }
 
@@ -67,7 +68,7 @@ public class UseItemCommand implements Command{
             }
         }
 
-        return "Použil(a) jsi: " + itemName + ", ale nic zvláštního se nestalo.";
+        return "Použil jsi: " + itemName + ", ale nic zvláštního se nestalo.";
     }
 
     private void unlockNpcGlobally(String npcId, String locationId) {
@@ -75,7 +76,7 @@ public class UseItemCommand implements Command{
         Location loc = world.get(locationId);
         if (loc != null) {
 
-            System.out.println("DEBUG: Odemčena postava " + npcId + " v lokaci " + locationId);
+            System.out.println(": Odemčena postava " + npcId + " v lokaci " + locationId);
         }
     }
 }

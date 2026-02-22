@@ -34,7 +34,7 @@ public class TalkCommand implements Command{
     public String execute(String args) {
 
         if (args.isEmpty()) {
-            return "Musíš zadat jméno NPC, se kterým chceš mluvit (např. 'mluv Balvadr').";
+            return "Musíš zadat jméno NPC, se kterým chceš mluvit.";
         }
 
 

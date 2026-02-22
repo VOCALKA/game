@@ -38,7 +38,7 @@ public class QuestsCommand implements Command{
         for (QuestData qData : quests) {
 
             if (!"LOCKED".equalsIgnoreCase(qData.status)) {
-                String statusIndicator = "COMPLETED".equalsIgnoreCase(qData.status) ? " [✓ hotovo]" : " [• aktivní]";
+                String statusIndicator = "COMPLETED".equalsIgnoreCase(qData.status) ? " [hotovo]" : " [aktivní]";
                 sb.append("- ").append(qData.getTitle()).append(statusIndicator).append("\n");
                 hasVisibleQuest = true;
             }

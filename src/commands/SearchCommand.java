@@ -1,14 +1,7 @@
 package commands;
 
-
-import characters.Character;
-import characters.CharacterData;
 import characters.Player;
-import items.ItemData;
 import locations.Location;
-import main.GameCharacter;
-
-import java.util.ArrayList;
 
 public class SearchCommand implements Command{
     private Player player;

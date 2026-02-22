@@ -68,7 +68,7 @@
       "interactions": [
     {
       "triggerItem": "item_filled_bottle",
-      "npcResponse": "Ó, ta voda! Cítím, jak kletba slábne... Ztroskotanec v táboře ti teď pomůže.",
+      "npcResponse": "Ó, ta voda! Cítím, jak kletba slábne...",
       "action": "COMPLETE_QUEST",
       "targetQuestId": "q_free_balvadr"
     },
@@ -204,7 +204,7 @@
       "requiredItems": ["item_filled_bottle"],
       "unlockCharacterId": "npc_castaway",
       "unlockLocationId": "loc_camp",
-      "npcResponse": "Ó, ta voda! Cítím, jak kletba slábne... Ztroskotanec ti teď pomůže.",
+      "npcResponse": "Ó, ta voda! Cítím, jak kletba slábne...",
       "rewardItem": null,
       "status": "LOCKED"
     },
