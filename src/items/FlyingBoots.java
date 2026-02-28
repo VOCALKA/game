@@ -28,7 +28,8 @@ public class FlyingBoots implements Item{
     @Override
     public String getName() {
         //TODO
-        return "Létající boty";
+        //return "Létající boty";
+        return "Letajici boty";
     }
 
     /**

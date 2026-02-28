@@ -9,7 +9,8 @@ public class Light implements Item{
     @Override
     public String getName() {
         //TODO
-        return "Světlo";
+        //return "Světlo";
+        return "Svetlo";
     }
 
     /**

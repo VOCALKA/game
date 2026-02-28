@@ -7,7 +7,8 @@ public class Wood implements Item{
     @Override
     public String getName() {
         //TODO
-        return "Dřevo";
+        //return "Dřevo";
+        return "Drevo";
     }
 
     @Override

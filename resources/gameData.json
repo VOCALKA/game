@@ -2,35 +2,35 @@
   "items": [
     {
       "id": "item_empty_bottle",
-      "name": "Prázdná lahvička",
+      "name": "Prazdna lahvicka",
       "type": "QUEST",
       "text": "Ta lahvička je prázdná… možná by šla někde naplnit.",
       "description": "Malá skleněná lahvička s korkem. Lze ji naplnit vodou z laguny."
     },
     {
       "id": "item_filled_bottle",
-      "name": "Naplněná lahvička",
+      "name": "Naplnena lahvicka",
       "type": "QUEST",
       "text": "Někdo na ostrově zoufale potřebuje vodu z laguny.",
       "description": "Lahvička naplněná čirou vodou z laguny. Dokáže oslabit kletbu."
     },
     {
       "id": "item_wood",
-      "name": "Dřevo",
+      "name": "Drevo",
       "type": "QUEST",
       "text": "Použij ho u Ztroskotance pro opravu lodě.",
       "description": "Kus dřeva z Bludného stromu. Slouží k opravě lodě."
     },
     {
       "id": "item_light",
-      "name": "Světlo",
+      "name": "Svetlo",
       "type": "QUEST",
       "text": "Použitím v mlze se objeví Pán ostrova.",
       "description": "Lucerna se světlem. Umožňuje setkání s Pánem ostrova."
     },
     {
       "id": "item_flying_boots",
-      "name": "Létající boty",
+      "name": "Letajici boty",
       "type": "KEY",
       "description": "Magické boty umožňující létání. Hlavní odměna a konec hry."
     }
@@ -46,7 +46,7 @@
     },
     {
       "id": "npc_island_lord",
-      "name": "Pán ostrova",
+      "name": "Pan ostrova",
       "role": "NPC",
       "homeLocationId": "loc_fog",
       "locked": true,
@@ -54,7 +54,7 @@
     },
     {
       "id": "npc_wandering_tree",
-      "name": "Bludný strom",
+      "name": "Bludny strom",
       "role": "NPC",
       "homeLocationId": "loc_forest",
       "notes": "Zakletý strom, který ztratil orientaci a řídí se zpěvem ptáků."
@@ -92,7 +92,7 @@
   "locations": [
     {
       "id": "loc_beach",
-      "name": "Pláž",
+      "name": "Plaz",
       "description": "Místo, kde Pavla ztroskotala. Začátek hry.",
       "text": "Měl bych se začít pohybovat.",
       "ambientSound": "ššš, frrrr, šmmm",
@@ -103,7 +103,7 @@
     },
     {
       "id": "loc_camp",
-      "name": "Tábor",
+      "name": "Tabor",
       "description": "Provizorní tábor Ztroskotance.",
       "text": "Ta loď opravdu potřebuje opravit.",
       "ambientSound": "chrrr",
@@ -115,7 +115,7 @@
     },
     {
       "id": "loc_cliff",
-      "name": "Útes",
+      "name": "Utes",
       "description": "Skalnatý útes nad mořem.",
       "text": "Něco bych tu mohl najit, kdybych chtěl. Nemůžu se soustředit, pořád mě tu otravuje zvlašní zvuk.",
       "ambientSound": "Píp",
@@ -127,7 +127,7 @@
     },
     {
       "id": "loc_cave",
-      "name": "Jeskyně",
+      "name": "Jeskyne",
       "description": "Temná jeskyně.",
       "text": "Uh, zakopl jsem o kámen, kolik jich tu je? Možná bych mohl promluvit na tenhle.",
       "ambientSound": "drnč",
@@ -153,7 +153,7 @@
       "id": "loc_forest",
       "name": "Les",
       "description": "Hustý les.",
-      "text": "Dokážou mluvit stromy?",
+      "text": "Dokážou mluvit stromy? Tři zvuky.",
       "ambientSound": "Skříp",
       "exits": {
         "north": "loc_fog",

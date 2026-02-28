@@ -10,7 +10,8 @@ public class EmptyBottle implements Item{
     @Override
     public String getName() {
         //TODO
-        return "Prázdná lahvička";
+        //return "Prázdná lahvička";
+        return "Prazdna lahvicka";
     }
 
     /**
