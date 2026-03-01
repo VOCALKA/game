@@ -22,7 +22,12 @@ public class Location {
 
     public String text;
 
-    public Location(String start, String startLocation) {
+    public Location(String id, String name) {
+        this.id = id;
+        this.name = name;
+        this.exits = new HashMap<>();
+        this.neighbors = new ArrayList<>();
+        this.lootTable = new ArrayList<>();
     }
 
     public String getText() {

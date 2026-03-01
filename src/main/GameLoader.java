@@ -83,6 +83,7 @@ public class GameLoader {
 
 
         //player.addItem(items.ItemFactory.createItem("item_flying_boots", player.getCmdManager()));
+        //player.addItem(items.ItemFactory.createItem("item_flying_boots", player.getCmdManager()));
 
 
 

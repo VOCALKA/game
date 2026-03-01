@@ -29,6 +29,9 @@ public class ListenCommand implements Command{
     @Override
     public String execute(String args) {
         Location location = player.getCurrentLocation();
+        if (location == null) {
+            return "Nejsi nikde!";
+        }
         String sound = location.getAmbientSound();
         if (sound == null || sound.isEmpty()) {
 
