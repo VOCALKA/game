@@ -4,6 +4,7 @@ import characters.Player;
 import items.*;
 import characters.Character;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,9 @@ public class Location {
 
 
     public String text;
+
+    public Location(String start, String startLocation) {
+    }
 
     public String getText() {
         return text;

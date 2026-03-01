@@ -21,6 +21,9 @@ public class QuestData {
     public String action;
     public ArrayList<String> correctLocationIds;
 
+
+
+
     public String getId() { return id; }
     public String getTitle() { return title; }
     public String getGiverCharacterId() { return giverCharacterId; }

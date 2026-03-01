@@ -8,6 +8,9 @@ public class CharacterData {
     private String notes;
     private boolean locked;
 
+    public CharacterData(String npc1, String ss, String s) {
+    }
+
     /**
      * Checks if the character is locked.
      * @return true if the character is locked, false otherwise
