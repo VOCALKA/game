@@ -15,6 +15,7 @@ public class AnswerCommand implements Command {
     private Player player;
     private Map<String, Location> world;
     private GameData gameData;
+    private CommandManager cmdManager;
 
     /**
      * Constructs a new AnswerCommand for a player in a given world with access to game data.
@@ -22,10 +23,11 @@ public class AnswerCommand implements Command {
      * @param world map of all game locations
      * @param gameData full game data
      */
-    public AnswerCommand(Player player, Map<String, Location> world, GameData gameData) {
+    public AnswerCommand(Player player, Map<String, Location> world, GameData gameData, CommandManager cmdManager) {
         this.player = player;
         this.world = world;
         this.gameData = gameData;
+        this.cmdManager = cmdManager;
     }
 
     @Override
@@ -83,11 +85,10 @@ public class AnswerCommand implements Command {
                         }
                         return finishQuest(qData, currentNpc);
                     } else {
-                        //return "Pán ostrova: Tvá čísla (" + playerInput + ") jsou lživá! Správně mělo být (" + expectedAnswer + "). Zůstaneš tu navždy.";
-                        System.out.println("Pán ostrova: Tvá čísla (" + playerInput + ") jsou lživá! Správně mělo být (" + expectedAnswer + "). Zůstaneš tu navždy.");
-                        System.exit(0);
-                        return "";
-                        //TODO opravit zpět na return a command end, vymazat system.exit
+                        cmdManager.stopGame();
+                        return "Pán ostrova: Tvá čísla (" + playerInput +
+                                ") jsou lživá! Správně mělo být (" + expectedAnswer +
+                                "). Zůstaneš tu navždy.";
 
                     }
                 }
@@ -169,17 +170,6 @@ public class AnswerCommand implements Command {
         return currentNpc.getName() + ": " + qData.npcResponse;
     }
 
-    /*private void giveReward(String itemId) {
-
-        items.Item reward = items.ItemFactory.createItem(itemId);
-
-        if (reward != null) {
-            player.addItem(reward);
-            //System.out.println("[SYSTÉM]: Do inventáře přidáno: " + reward.getName());
-        } else {
-            //System.out.println("[DEBUG]: ItemFactory nenašla předmět s ID: " + itemId);
-        }
-    }*/
 
     /**
      * Gives a reward item to the player. Handles Flying Boots specially.

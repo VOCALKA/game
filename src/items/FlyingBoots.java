@@ -45,11 +45,11 @@ public class FlyingBoots implements Item{
      */
     @Override
     public String use(Player player) {
-        System.out.println("Vznesla ses do vzduchu! Vyhrál jsi.");
+        //System.out.println("Vznesla ses do vzduchu! Vyhrál jsi.");
         player.removeItem(this);
-        System.exit(0);
-        return "";
-        //TODO Dát do string metody, změnit System.exit(0);
+        cmdManager.stopGame();
+        //System.exit(0);
+        return "Vznesla ses do vzduchu! Vyhrál jsi.";
     }
 
 

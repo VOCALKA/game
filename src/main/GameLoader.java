@@ -79,10 +79,11 @@ public class GameLoader {
 
 
         Player player = new Player("Pavla", world.get("loc_beach"));
+
         player.setGameData(gameData);
 
 
-        //player.addItem(items.ItemFactory.createItem("item_flying_boots", player.getCmdManager()));
+
         //player.addItem(items.ItemFactory.createItem("item_flying_boots", player.getCmdManager()));
 
 
@@ -100,9 +101,12 @@ public class GameLoader {
         cmdManager.registerCommand(new UseItemCommand(player, world));
         cmdManager.registerCommand(new TalkCommand(player));
         //cmdManager.registerCommand(new AnswerCommand(player));
-        cmdManager.registerCommand(new AnswerCommand(player, world, gameData));
+        cmdManager.registerCommand(new AnswerCommand(player, world, gameData, cmdManager));
         cmdManager.registerCommand(new HintCommand(player, gameData));
         cmdManager.registerCommand(new SearchCommand(player));
+
+        player.setCmdManager(cmdManager);
+        //player.addItem(items.ItemFactory.createItem("item_flying_boots", cmdManager));
 
 
 

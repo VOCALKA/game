@@ -162,9 +162,9 @@ public class Player {
     private commands.CommandManager cmdManager;
 
 
-    /*public void setCmdManager(commands.CommandManager cmdManager) {
+    public void setCmdManager(commands.CommandManager cmdManager) {
         this.cmdManager = cmdManager;
-    }*/
+    }
 
     /**
      * Returns the command manager instance.
