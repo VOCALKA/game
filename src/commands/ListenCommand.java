@@ -16,13 +16,11 @@ public class ListenCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
         return "poslouchej";
     }
 
     @Override
     public String getDescription() {
-        // TODO
         return "Naslouchá prostředí v aktuální lokaci";
     }
 

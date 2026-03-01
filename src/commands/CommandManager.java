@@ -57,9 +57,6 @@ public class CommandManager {
         this.gameRunning = false;
     }
 
-    /*public void setGameRunning(boolean running) {
-        this.gameRunning = running;
-    }*/
 
     /**
      * Returns a formatted string listing all registered commands and their descriptions.
@@ -73,7 +70,5 @@ public class CommandManager {
         }
         return sb.toString();
     }
-
-
 
 }

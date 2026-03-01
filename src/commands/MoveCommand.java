@@ -26,14 +26,12 @@ public class MoveCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
         return "jdi";
     }
 
     @Override
     public String getDescription() {
        return "Pohyb mezi lokacemi (jdi sever, jih, východ, západ)";
-        // TODO
     }
 
     /**

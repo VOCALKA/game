@@ -20,13 +20,11 @@ public class QuestsCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
         return "ukoly";
     }
 
     @Override
     public String getDescription() {
-        // TODO
         return "Zobrazí aktuální úkoly hráče";
     }
 
@@ -56,7 +54,5 @@ public class QuestsCommand implements Command{
 
         if (!hasVisibleQuest) return "Zatím nemáš žádné aktivní úkoly. Zkus si promluvit s lidmi na ostrově.";
         return sb.toString().trim();
-
-        // TODO
     }
 }

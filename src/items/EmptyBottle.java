@@ -9,8 +9,6 @@ public class EmptyBottle implements Item{
      */
     @Override
     public String getName() {
-        //TODO
-        //return "Prázdná lahvička";
         return "Prazdna lahvicka";
     }
 
@@ -33,8 +31,6 @@ public class EmptyBottle implements Item{
             //System.out.println("Nelze naplnit zde.");
             return "Zde lahvičku naplnit nemůžeš.";
         }
-
-        //TODO
     }
     /**
      * Returns the unique ID of this item.

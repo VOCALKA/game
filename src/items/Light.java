@@ -8,8 +8,6 @@ import main.GameLoader;
 public class Light implements Item{
     @Override
     public String getName() {
-        //TODO
-        //return "Světlo";
         return "Svetlo";
     }
 
@@ -28,8 +26,6 @@ public class Light implements Item{
         Location loc = player.getCurrentLocation();
 
         if (loc.getId().equals("loc_fog")) {
-            //System.out.println("Rozsvítila jsi lucernu... Její záře prořízla hustou mlhu.");
-            //return "Rozsvítila jsi lucernu... Její záře prořízla hustou mlhu.";
             String result;
 
 
@@ -40,11 +36,9 @@ public class Light implements Item{
 
                     if (!uzTuJe) {
                         loc.addNpc(GameLoader.createCharacter(cd));
-                        //System.out.println("Z mlhy před tebou pomalu vystoupila vysoká postava Pána ostrova!");
                         result = "Rozsvítila jsi lucernu... Její záře prořízla hustou mlhu.\n" +
                                 "Z mlhy před tebou pomalu vystoupila vysoká postava Pána ostrova!";
                     } else {
-                        //System.out.println("Pán ostrova tu už na tebe čeká.");
                         result = "Pán ostrova tu už na tebe čeká.";
                     }
                     player.removeItem(this);
@@ -52,7 +46,6 @@ public class Light implements Item{
                 }
             }
         } else {
-            //System.out.println("Tady je světla dost, lucernu netřeba pálit.");
             return "Tady je světla dost, lucernu netřeba pálit.";
         }
         return "";

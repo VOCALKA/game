@@ -164,7 +164,6 @@ public class GameLoader {
      * Creates a Character instance from CharacterData.
      */
     public static characters.Character createCharacter(CharacterData data) {
-
         return new characters.NPC(data);
     }
 }

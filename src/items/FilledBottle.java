@@ -9,8 +9,6 @@ public class FilledBottle implements Item{
      */
     @Override
     public String getName() {
-        //TODO
-        //return "Naplněná lahvička";
         return "Naplnena lahvicka";
     }
 
@@ -25,7 +23,6 @@ public class FilledBottle implements Item{
     public String use(Player player) {
 
         return "Napil ses vody.";
-        //TODO
     }
     /**
      * Returns the unique ID of this item.

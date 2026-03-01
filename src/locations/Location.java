@@ -70,12 +70,12 @@ public class Location {
                 ", lootTable=" + lootTable +
                 '}';
     }
-//
+
     /** Returns a map of directional exits for this location. */
     public Map<String, String> getExits() {
         return exits;
     }
-//
+
     /** Returns the textual description of the location. */
     public String getDescription() {
         return description;

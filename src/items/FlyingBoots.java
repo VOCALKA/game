@@ -17,18 +17,12 @@ public class FlyingBoots implements Item{
 
 
 
-
-
-
-
     /**
      * Returns the display name of the item.
      * @return "Létající boty"
      */
     @Override
     public String getName() {
-        //TODO
-        //return "Létající boty";
         return "Letajici boty";
     }
 
@@ -36,12 +30,8 @@ public class FlyingBoots implements Item{
      * Uses the flying boots.
      * Prints a victory message and ends the game immediately.
      *
-     * Note: Currently uses System.exit(0) to end the program.
-     * If you want a cleaner game loop exit, replace this with
-     * cmdManager.stopGame() and handle ending logic in the main loop.
-     *
      * @param player the player using the boots
-     * @return an empty string (the message is printed directly)
+     * @return "Vznesla ses do vzduchu! Vyhrál jsi".
      */
     @Override
     public String use(Player player) {

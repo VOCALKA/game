@@ -21,13 +21,11 @@ public class PickUpCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
         return "seber";
     }
 
     @Override
     public String getDescription() {
-        // TODO
         return "Sebere předmět v lokaci";
     }
 
@@ -56,7 +54,5 @@ public class PickUpCommand implements Command{
         loc.removeItem(item);
 
         return "Sebral jsi: " + item.getName();
-
-        // TODO
     }
 }

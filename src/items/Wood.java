@@ -6,15 +6,12 @@ public class Wood implements Item{
 
     @Override
     public String getName() {
-        //TODO
-        //return "Dřevo";
         return "Drevo";
     }
 
     @Override
     public String use(Player player) {
         return null;
-        //TODO
     }
     @Override
     public String getId() {

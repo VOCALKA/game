@@ -111,8 +111,6 @@ public class AnswerCommand implements Command {
 
                         String expectedName = targetLoc.getName().toLowerCase().trim();
 
-                        //System.out.println(": Hledám '" + expectedName + "' v tvé odpovědi '" + playerInput + "'");
-
                         if (!playerInput.contains(expectedName)) {
                             allFound = false;
                             break;
@@ -213,7 +211,6 @@ public class AnswerCommand implements Command {
 
                     loc.setLocked(false);
 
-                    //System.out.println("[DEBUG]: Postava " + cd.getName() + " přidána do " + loc.getName());
                     break;
                 }
             }

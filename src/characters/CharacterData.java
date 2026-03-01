@@ -50,7 +50,7 @@ public class CharacterData {
     }
 
     /**
-     * Returns the role of the character (e.g., PLAYER, NPC).
+     * Returns the role of the character (PLAYER, NPC).
      * @return role as a String
      */
     public String getRole() {

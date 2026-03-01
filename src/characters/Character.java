@@ -33,14 +33,12 @@ public abstract class Character {
 
     /**
      * Returns the name of the character.
-     * Must be implemented by subclasses.
      * @return character's name
      */
     public abstract String getName();
 
     /**
      * Defines what the character says when the player talks to them.
-     * Must be implemented by subclasses.
      * @param player the player instance interacting with this character
      * @return text that the character says to the player
      */

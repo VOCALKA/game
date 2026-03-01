@@ -67,6 +67,13 @@ public class GameData {
         }
         throw new IllegalArgumentException("Neexistuje lokace s id: " + id);
     }
+
+    /**
+     *Finds an item definition by its unique identifier.
+     *Searches through all loaded item data from the game configuration.
+     * @param id the unique identifier of the item to find
+     * @return the matching ItemData object if found, otherwise null
+     */
     public ItemData findItemDataById(String id) {
         if (items == null) return null;
 

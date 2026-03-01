@@ -24,13 +24,11 @@ public class TalkCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
         return "mluv";
     }
 
     @Override
     public String getDescription() {
-        // TODO
         return "Zahájí rozhovor s NPC";
     }
 

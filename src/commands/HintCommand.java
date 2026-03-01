@@ -52,7 +52,6 @@ public class HintCommand implements Command{
      */
     @Override
     public String getName() {
-        // TODO
         return "rada";
     }
 
@@ -62,7 +61,6 @@ public class HintCommand implements Command{
      */
     @Override
     public String getDescription() {
-        // TODO
         return "Zobrazí nápovědu";
     }
 
@@ -91,7 +89,6 @@ public class HintCommand implements Command{
         Location dataLoc = gameData.findLocation(currentLoc.getId());
 
         if (dataLoc != null && dataLoc.getText() != null && !dataLoc.getText().isEmpty()) {
-            //System.out.println(": " + dataLoc.getText());
             return ": " + dataLoc.getText();
         }
         return "Nic.";

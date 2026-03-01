@@ -9,7 +9,6 @@ public class EndCommand implements Command{
      */
     @Override
     public String getName() {
-        // TODO
         return "konec";
     }
 
@@ -19,7 +18,6 @@ public class EndCommand implements Command{
      */
     @Override
     public String getDescription() {
-        // TODO
         return "Ukončí hru";
     }
     private String message;

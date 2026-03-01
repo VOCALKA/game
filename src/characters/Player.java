@@ -59,26 +59,11 @@ public class Player {
         this.currentLocation = startLocation;
     }
 
-    /*public void pickUp(Item item) {
-        addItem(item);
-        // TODO
-    }*/
-
-    /*public void useItem(Item item) {
-        if (item == null) {
-            System.out.println("Takový předmět nemáš.");
-            return;
-        }
-
-        item.use(this);
-        // TODO
-    }*/
     /**
      * Returns the list of items in the inventory.
      * @return list of items
      */
     public ArrayList<Item> getInventory() {
-        //TODO
         return inventory;
     }
 
@@ -87,7 +72,6 @@ public class Player {
      * @return list of quests
      */
     public ArrayList<QuestData> getQuests() {
-        //TODO
         return quests;
     }
 

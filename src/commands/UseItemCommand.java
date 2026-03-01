@@ -32,13 +32,13 @@ public class UseItemCommand implements Command{
 
     @Override
     public String getName() {
-        // TODO
+
         return "pouzij";
     }
 
     @Override
     public String getDescription() {
-        // TODO
+
         return "Použije předmět z inventáře";
     }
 
@@ -81,7 +81,6 @@ public class UseItemCommand implements Command{
             }
         }
 
-        //return "Použil jsi: " + itemName + ", ale nic zvláštního se nestalo.";
         return itemResult;
     }
 
