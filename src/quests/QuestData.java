@@ -50,4 +50,8 @@ public class QuestData {
     public String getAction() {
         return action;
     }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
 }

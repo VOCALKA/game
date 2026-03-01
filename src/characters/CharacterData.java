@@ -8,7 +8,13 @@ public class CharacterData {
     private String notes;
     private boolean locked;
 
-    public CharacterData(String npc1, String ss, String s) {
+    public CharacterData(String id, String name, String role) {
+        this.id = id;
+        this.name = name;
+        this.role = role;
+        this.notes = "";
+        this.homeLocationId = null;
+        this.locked = false;
     }
 
     /**
@@ -57,5 +63,29 @@ public class CharacterData {
      */
     public String getNotes() {
         return notes;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public void setHomeLocationId(String homeLocationId) {
+        this.homeLocationId = homeLocationId;
+    }
+
+    public void setNotes(String notes) {
+        this.notes = notes;
+    }
+
+    public void setLocked(boolean locked) {
+        this.locked = locked;
     }
 }
